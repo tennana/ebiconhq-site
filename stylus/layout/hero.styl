@@ -1,0 +1,14 @@
+.hero
+  margin 2rem 0
+  background-image: url(/static/img/banner.png)
+  background-position: right;
+  background-repeat: no-repeat;
+  @media screen and (max-width breakpoints.sm)
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;
+    body.dark &
+      background-color:rgba(0,0,0,0.3);
+      background-blend-mode:darken;
+
+  &__description
+    max-width 40ch

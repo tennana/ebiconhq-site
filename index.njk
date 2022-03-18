@@ -1,0 +1,80 @@
+---
+eleventyComputed:
+  title: "{{ site.meta.title }}{% if pagination.pageNumber > 0 %} - Page {{ pagination.pageNumber + 1 }}{% endif %}"
+layout: layouts/base.njk
+permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}
+pagination:
+  data: collections.post
+  size: 9
+  alias: posts
+  reverse: true
+eleventyNavigation:
+  key: Home
+  order: 0
+---
+
+<div class="container">
+    <div class="hero">
+        <h1>
+            {{ site.meta.title }}
+        </h1>
+        <p class="hero__description">
+            {{ site.meta.description }}
+        </p>
+    </div>
+    {%- if pagination.pageNumber == 0 %}
+        <input id="about-ebicon" class="accordion" type="checkbox">
+        <label for="about-ebicon" class="section-title">はじめてorひさびさの方へ</label>
+        <div class="accordion-body card">
+            <p><img
+                        title="ボクハエビチャン-えびが眠そうにしている"
+                        src="/static/img/ebi.png"
+                        alt="ボクハエビチャン-えびが眠そうにしている" style="width:250px;height:200px">
+            </p>
+            <p>TRPGプレイヤーノミナサン、ヨウコソ！</p>
+            <p>EbiconはTRPGコンベンションです！</p>
+            <p>Ebiconは冒企オンリーを自称しているので、人間以外もたくさんいます。</p>
+            <p>Ebiconは流行りを無視して奈良でやります。</p>
+            <p>Ebiconは主催の脳波レベルが低いです。</p>
+            <p>Ebiconは街コンやライブとは違う、と主張しているえびてんもいます。</p>
+            <p>Ebiconがやらねば誰がやる！<strong>おまえがやる！！！</strong></p>
+            <div>
+                <button id="ebicon-bye" style="font-size: larger;" type="button">再試行</button>
+                <script type="text/javascript">
+                    document.getElementById("ebicon-bye").addEventListener("click", function (e) {
+                        e.stopImmediatePropagation();
+                        e.currentTarget.innerHTML = "<strong>バイーチャ!</strong>";
+                        e.currentTarget.addEventListener("click", function (e) {
+                            e.currentTarget.parentNode.removeChild(e.currentTarget);
+                        }, {once:true});
+                        return false;
+                    }, {once:true});
+                </script>
+            </div>
+            <hr>
+            <p>Ebiconはだいたい奈良県近鉄奈良駅そばで行われる冒険企画局作品オンリーTRPGコンベンションです。Ebicon HQ(代表:てんなな)が主宰しています。</p>
+            <h6>いつやるの？</h6>
+            <ol>
+                <li style="list-style-type: none;">
+                    <ol>
+                        <li>秋狙い。</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    {% endif %}
+
+    <h2 class="section-title">
+        最近のえびこん
+        {%- if pagination.pageNumber != 0 %} - Page {{ pagination.pageNumber + 1 }}{% endif %}
+    </h2>
+    {% include "components/postslist.njk" %}
+    <div class="pagination">
+        {% if pagination.previous %}
+            <a href="{{ pagination.href.previous | url }}" class="pagination__prev">&larr; Prev Page</a>
+        {% endif %}
+        {% if pagination.next %}
+            <a href="{{ pagination.href.next | url }}" class="pagination__next">Next Page &rarr;</a>
+        {% endif %}
+    </div>
+</div>

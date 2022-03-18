@@ -1,0 +1,33 @@
+---
+title: Ebicon 015
+tags:
+  - Ebicon zero-one-five
+  - abstract
+layout: layouts/base.njk
+eleventyComputed:
+    card_description: "{{ eventDate | readableJaDate }}～に開催予定だったTRPGコンベンション「{{ title }}」の開催概要です。"
+date: 2020-04-04
+eventDate: 2020-04-11 10:55
+eventEndTime: "20:00"
+playerClosingDate: 2020-04-04 18:00
+masterClosingDate: 2020-04-04 18:00
+maxTable: 10
+---
+{% extends 'layouts/abstracts.njk' %}
+{% block eventDate %}
+<strong>中止になりました</strong>
+{{ super() }}
+{% endblock %}
+{% block content %}
+<h3>スケジュール(決まっている部分だけ)</h3>
+10:00 開場<br>
+10:55 開会式(代表の妄言、会場諸注意、卓紹介など)<br>
+11:45- セッション時間<br>
+19:00 セッション終了後閉会式(様子を見て-30分することがあります)<br>
+
+<h3>卓分け方式</h3>
+当日卓分け。
+
+<h3>懇親会</h3>
+まだ未定
+{% endblock %}

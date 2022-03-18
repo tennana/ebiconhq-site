@@ -1,0 +1,37 @@
+---
+title: Ebicon 12th
+tags:
+- Ebicon 12th
+- abstract
+layout: layouts/base.njk
+eleventyComputed:
+    card_description: "{{ eventDate | readableJaDate }}～に奈良県奈良市で開催したTRPGコンベンション「{{ title }}」の開催概要です。"
+date: 2019-10-26
+eventDate: 2019-10-26 10:55
+eventEndTime: "20:00(最大)"
+playerClosingDate: 2019-10-25 18:00
+masterClosingDate: 2019-10-19 18:00
+maxTable: 8
+---
+{% extends 'layouts/abstracts.njk' %}
+
+{% block table %}
+    <h3>卓</h3>
+    最大8卓、PL人数は卓の最大人数次第
+{%- endblock %}
+{% block content %}
+<h3>スケジュール(決まっている部分だけ)</h3>
+10:00 開場<br>
+10:55 開会式(代表の妄言、会場諸注意、卓紹介など)<br>
+11:45- セッション時間<br>
+18:30 閉会式(様子を見て-30分することがあります)<br>
+19:00- 懇親会(閉会式終わり次第)<br>
+21:00 閉室
+
+<h3>卓分け方式</h3>
+当日卓分け。
+
+<h3>懇親会</h3>
+卓を行った会場に軽食を運び込んでの懇親会を予定しています。(人数によって変更の可能性があります)<br>
+代金は人数で変動しますが、最大3500円となります。
+{% endblock %}

@@ -1,0 +1,46 @@
+---
+title: Ebicon 10th
+tags:
+- Ebicon 10th
+- abstract
+layout: layouts/base.njk
+eleventyComputed:
+    card_description: "{{ eventDate | readableJaDate }}～に奈良県奈良市で開催したTRPGコンベンション「{{ title }}」の開催概要です。"
+date: 2018-11-25
+eventDate: 2018-11-25 10:55
+eventEndTime: "20:00(最大)"
+playerClosingDate: 2018-11-24 20:00
+masterClosingDate: 2018-11-17 18:00
+maxTable: 7
+---
+{% extends 'layouts/abstracts.njk' %}
+
+{% block price %}
+    <h3>参加料</h3>
+    <dl>
+        <dt>一般参加</dt>
+        <dd>500円/人</dd>
+        <dt>えび尻尾</dt>
+        <dd>500円/人</dd>
+        <dt>スタッフ</dt>
+        <dd>0円 (代表以外)</dd>
+    </dl>
+    <h4>利用目的</h4>
+    <div>
+        主として会場費、運営雑費、額によって各卓差し入れなど。<br>
+        残額については、(1d6)割を次回またはEbicon HQ協賛コンベンションの運営費にプール、残りを<a title="奈良の鹿愛護会" href="http://naradeer.com/" target="_blank" rel="noopener">奈良の鹿愛護会</a>へ寄付予定。
+    </div>
+{% endblock %}
+{% block content %}
+<h3>スケジュール(決まっている部分だけ)</h3>
+10:20 開場<br>
+10:55 開会式(代表の妄言、会場諸注意、卓紹介など)<br>
+12:00- セッション時間<br>
+19:00 セッション終了後閉会式(様子を見て-30分することがあります)
+
+<h3>卓分け方式</h3>
+当日卓分け。
+
+<h3>懇親会</h3>
+まだ未定。
+{% endblock %}

@@ -1,0 +1,25 @@
+---
+eleventyComputed:
+  title: "開催情報「{{ tag }}」"
+layout: layouts/base.njk
+card_description: TRPGコンベンション「Ebicon」の開催情報一覧です。
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+permalink: /events/{{ tag | slug }}/
+---
+
+{% block content %}
+<div class="container">
+  {% set posts = collections[tag] %}
+  {% include 'components/postslist.njk' %}
+</div>
+{% endblock %}

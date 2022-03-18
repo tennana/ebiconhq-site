@@ -1,0 +1,49 @@
+input.accordion
+  display: none;
+
+  + label
+    position: relative;
+    cursor: pointer;
+
+  + label:before,
+  + label:after
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 2px;
+    background-color: #333;
+    body.dark &
+      background-color: white;
+
+  + label::before
+    top: 48%;
+    right: -1.5em;
+    transform: rotate(0deg);
+
+  + label::after
+    top: 48%;
+    right: -1.5em;
+    transform: rotate(90deg);
+
+.accordion-body {
+  height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  transition: .5s;
+  visibility: hidden;
+}
+
+input.accordion:checked
+  + label::before {
+    transform: rotate(45deg);
+  }
+
+  + label::after {
+    transform: rotate(-45deg);
+  }
+
+  + label + .accordion-body
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+    height: fit-content;

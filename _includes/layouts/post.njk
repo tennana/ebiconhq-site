@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="container-sm">
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+
+  <br><hr>
+  {% if not hideTagsList %}
+    {% for tag in tags %}
+      {% if tag.startsWith("Ebicon") %}
+        <a href="{{ url }}{{ tag | slug }}">{{ tag }}</a>
+        {%- if not loop.last %}, {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  <br><br>
+  <a href="{{ '/' | url }}">&larr; Back home</a>
+</div>
