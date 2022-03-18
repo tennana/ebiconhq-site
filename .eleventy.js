@@ -2,11 +2,18 @@ const {DateTime} = require('luxon')
 const navigationPlugin = require('@11ty/eleventy-navigation')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const metagen = require("eleventy-plugin-metagen")
+const {createInlineCss} = require("eleventy-google-fonts/eleventy-google-fonts");
 
 module.exports = (config) => {
     config.addPlugin(navigationPlugin);
     config.addPlugin(rssPlugin);
     config.addPlugin(metagen);
+    config.addAsyncShortcode('eleventyGoogleFonts',async value => {
+        return await createInlineCss(value)
+    });
+    config.addNunjucksAsyncShortcode('eleventyGoogleFonts',async value => {
+        return await createInlineCss(value)
+    });
 
     config.addPassthroughCopy('css');
     config.addPassthroughCopy('static');

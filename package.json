@@ -19,6 +19,7 @@
     "dev": "concurrently -n stylus,11ty \"yarn watch:stylus\" \"yarn watch:11ty\""
   },
   "dependencies": {
+    "eleventy-google-fonts": "^0.1.0",
     "eleventy-plugin-metagen": "^1.6.0"
   }
 }
