@@ -238,6 +238,7 @@ input.accordion {
 }
 input.accordion + label {
   position: relative;
+  cursor: pointer;
 }
 input.accordion + label:before,
 input.accordion + label:after {
