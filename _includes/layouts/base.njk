@@ -8,14 +8,18 @@
 
   <link rel="shortcut icon" href="{{ '/static/img/favicon.ico' | url }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ '/static/css/main.css' | url }}" media="all">
+  {% set type %}
+    {% if page.url == '/' %}website{% else %}article{% endif %}
+  {%- endset %}
   {% metagen
     title=title or site.meta.title,
     desc=card_description or description or site.meta.description,
     locale="ja_jp",
-    url=url + page.url,
-    img= card_image or "/static/img/twitter_card.jpg",
+    url=site.meta.siteUrl + page.url,
+    img= card_image or ((url or site.meta.siteUrl) + "/static/img/twitter_card.jpg"),
+    type= type,
     img_alt="#trpg_ebicon",
-    twitter_card_type="summary_large_image",
+    twitter_card_type="summary",
     twitter_handle="tennana_tef",
     name="Ebicon HQ",
     site_name=meta.title,
