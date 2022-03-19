@@ -15,6 +15,7 @@ module.exports = (config) => {
         return await createInlineCss(value)
     });
 
+    config.addPassthroughCopy('_redirects');
     config.addPassthroughCopy('css');
     config.addPassthroughCopy('static');
 
