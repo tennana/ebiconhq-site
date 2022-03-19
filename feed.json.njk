@@ -4,26 +4,26 @@
   "eleventyExcludeFromCollections": true
 }
 ---
-{% set absoluteUrl %}{{ site.feed.path | url | absoluteUrl(metadata.url) }}{% endset %}
+{% set absoluteUrl %}{{ permalink | url | absoluteUrl(metadata.url) }}{% endset %}
 {
   "version": "https://jsonfeed.org/version/1",
   "title": "{{  site.meta.title }}",
-  "home_page_url": "{{ metadata.url }}",
+  "home_page_url": "{{ site.meta.siteUrl }}",
   "feed_url": "{{ absoluteUrl }}",
-  "description": "{{ site.meta.subtitle }}",
+  "description": "{{ site.meta.description }}",
   "author": {
-    "name": "{{ site.meta.authorName }}",
-    "url": "{{ site.meta.authorUrl }}"
+    "name": "{{ site.feed.authorName }}",
+    "url": "{{ site.feed.authorUrl }}"
   },
   "items": [
     {%- for post in collections.post | reverse %}
-    {%- set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset -%}
+    {%- set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.meta.siteUrl) }}{% endset -%}
     {
       "id": "{{ absolutePostUrl }}",
       "url": "{{ absolutePostUrl }}",
       "title": "{{ post.data.title }}",
-      "content_html": {% if post.templateContent %}{{ post.templateContent | dump | safe }}{% else %}""{% endif %},
-    "date_published": "{{ post.date | dateToRfc3339 }}"
+      "content_html": {% if post.templateContent %}{{ post.templateContent | dump | replace("  ", "") | replace("\\r\\n", "") | safe }}{% else %}""{% endif %},
+      "date_published": "{{ post.date | dateToRfc3339 }}"
     }
     {% if not loop.last %},{% endif %}
     {%- endfor %}

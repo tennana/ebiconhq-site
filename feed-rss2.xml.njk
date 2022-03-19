@@ -1,4 +1,5 @@
 ---
+permalink: "{{ site.feed.rss2path }}"
 eleventyExcludeFromCollections: true
 ---
 <?xml version='1.0' encoding='UTF-8'?>
@@ -6,16 +7,16 @@ eleventyExcludeFromCollections: true
     <channel>
         <title>{{ site.meta.title }}</title>
         <subtitle>{{ site.feed.subtitle }}</subtitle>
-        <link>{{ site.meta.siteurl }}</link>
+        <link>{{ site.meta.siteUrl }}</link>
         <language>ja</language>
         <description>{{ site.meta.description }}</description>
     {%- for post in collections.post | reverse %}
-        {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+        {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.siteUrl) }}{% endset %}
         <item>
             <title>{{ post.data.title }}</title>
             <link>{{ absolutePostUrl }}"/></link>
             <pubDate>{{ post.date | rssDate }}</pubDate>
-            <description>><![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}]]></description>
+            <description>><![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}]]></description>
         </item>
     {%- endfor %}
     </channel>

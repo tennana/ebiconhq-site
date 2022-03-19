@@ -10,6 +10,7 @@ module.exports = {
     subtitle: "TRPGコンベンション「Ebicon」の告知サイト",
     filename: "atom.xml",
     path: "/atom.xml",
+    rss2path: "/feed-rss2.xml",
     id: "https://ebicon.tennana.net/",
     authorName: "Ebicon HQ",
     authorEmail: "ebicon@tennana.net",
