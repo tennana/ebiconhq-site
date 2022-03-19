@@ -1,0 +1,22 @@
+---
+eleventyExcludeFromCollections: true
+---
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0'>
+    <channel>
+        <title>{{ site.meta.title }}</title>
+        <subtitle>{{ site.feed.subtitle }}</subtitle>
+        <link>{{ site.meta.siteurl }}</link>
+        <language>ja</language>
+        <description>{{ site.meta.description }}</description>
+    {%- for post in collections.post | reverse %}
+        {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+        <item>
+            <title>{{ post.data.title }}</title>
+            <link>{{ absolutePostUrl }}"/></link>
+            <pubDate>{{ post.date | rssDate }}</pubDate>
+            <description>><![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}]]></description>
+        </item>
+    {%- endfor %}
+    </channel>
+</rss>

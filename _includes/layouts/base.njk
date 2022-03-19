@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if title %}{{ title }} | {{ site.meta.title }}{% else %}{{ site.meta.title }}{% endif %}</title>
   <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.meta.description }}{% endif %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | url }}" title="Atom 最近のえびこん Feed" />
+  <link rel="alternate" type="application/rss+xml" href="{{ '/feed-rss2.xml' | url }}" title="RSS2.0 最近のえびこん Feed" />
   <link rel="shortcut icon" href="{{ '/static/img/favicon.ico' | url }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ '/static/css/main.css' | url }}" media="all">
   {% set type %}

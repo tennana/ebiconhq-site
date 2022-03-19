@@ -7,11 +7,12 @@ module.exports = {
     siteUrl: "https://ebicon.tennana.net",
   },
   feed: { // used in feed.xml.njk
-    subtitle: "Lorem ipsum dolor sit amet consecuteor",
+    subtitle: "TRPGコンベンション「Ebicon」の告知サイト",
     filename: "atom.xml",
     path: "/atom.xml",
     id: "https://ebicon.tennana.net/",
     authorName: "Ebicon HQ",
-    authorEmail: "ebicon@tennana.net"
+    authorEmail: "ebicon@tennana.net",
+    authorUrl: "https://twitter.com/tennana_tef"
   }
 }
