@@ -1,0 +1,12 @@
+---
+pagination:
+    data: table
+    size: 1
+    alias: table
+permalink: "events/{{ eventTag | slug }}/table_{{ (pagination.pageNumber + 1) | tableNumber }}/"
+eleventyComputed:
+  title: "{{ table.name }}"
+  tags:
+    - "{{ eventTag }}"
+layout: layouts/post.njk
+---

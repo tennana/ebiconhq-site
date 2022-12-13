@@ -39,6 +39,10 @@ module.exports = (config) => {
         return DateTime.fromFormat(dateObj, "yyyy-LL-dd HH:mm").setLocale('ja').toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY);
     });
 
+    config.addFilter("tableNumber", (number) => {
+        return ("0" + number).slice(-2);
+    });
+
     config.addCollection("tagList", collection => {
         const tagsObject = {}
         collection.getAll().forEach(item => {
