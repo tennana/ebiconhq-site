@@ -10,3 +10,12 @@ eleventyComputed:
     - "{{ eventTag }}"
 layout: layouts/post.njk
 ---
+
+<div class="pagination">
+	{% if pagination.previous %}
+		<a href="{{ pagination.href.previous | url }}" class="pagination__prev">&larr; Prev Table</a>
+	{% endif %}
+	{% if pagination.next %}
+		<a href="{{ pagination.href.next | url }}" class="pagination__next">Next Table &rarr;</a>
+	{% endif %}
+</div>
