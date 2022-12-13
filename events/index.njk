@@ -10,13 +10,13 @@ eleventyNavigation:
 <div class="container">
   <h1>開催情報</h1>
   <div class="card-grid">
-    {% for post in collections.abstract %}
+    {%- for post in collections.abstract | reverse -%}
     <div class="card">
       <h2 class="card__title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
       <div><span class="card__subtitle">開催日:</span>{{ post.data.eventDate | readableJaDate }}～</div>
       <div><span class="card__subtitle">PL事前予約締切:</span>{{ post.data.playerClosingDate | readableDate }}</div>
       <div><span class="card__subtitle">GM申込締切:</span>{{ post.data.masterClosingDate | readableDate }}</div>
     </div>
-    {% endfor %}
+    {%- endfor -%}
   </div>
 </div>
