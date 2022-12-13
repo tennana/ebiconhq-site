@@ -3,7 +3,7 @@
   "tags": [
     "post"
   ],
-  "date": "Last Modified",
+  "date": "git Last Modified",
   "eleventyComputed": {
     "tableDescription": "最大{{maxTable}}卓。"
   }
