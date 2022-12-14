@@ -6,7 +6,7 @@ layout: layouts/post.njk
 hideTagsList: true
 eleventyNavigation:
   key: FAQ
-  order: 3
+  order: 4
 ---
 
 ###### 関東でやりませんか！？
