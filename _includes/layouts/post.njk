@@ -10,7 +10,7 @@ layout: layouts/base.njk
   {% if not hideTagsList %}
     {% for tag in tags %}
       {% if tag.startsWith("Ebicon") %}
-        <a href="{{ url }}{{ tag | slug }}">{{ tag }}</a>
+        <a href="/events/{{ tag | slug }}">{{ tag }}</a>
         {%- if not loop.last %}, {% endif %}
       {% endif %}
     {% endfor %}

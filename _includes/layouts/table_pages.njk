@@ -6,10 +6,23 @@ pagination:
 permalink: "events/{{ eventTag | slug }}/table_{{ (pagination.pageNumber + 1) | tableNumber }}/"
 eleventyComputed:
   title: "{{ table.name }}"
-  tags:
-    - "{{ eventTag }}"
 layout: layouts/post.njk
 ---
+
+<h4>立卓予定システム</h4>
+{{ table.system }}
+
+<h4>対応レベル</h4>
+{{ table.lv }}
+
+<h4>対応可能人数</h4>
+{{ table.people }}
+
+<h4>必須の持ち物</h4>
+{{ table.items }}
+
+<h4>卓概要</h4>
+{{ table.content }}
 
 <div class="pagination">
 	{% if pagination.previous %}
