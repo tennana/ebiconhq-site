@@ -3,6 +3,7 @@ pagination:
     data: table
     size: 1
     alias: table
+    addAllPagesToCollections: true
 permalink: "events/{{ eventTag | slug }}/table_{{ (pagination.pageNumber + 1) | tableNumber }}/"
 eleventyComputed:
   title: "{{ table.name }}"
