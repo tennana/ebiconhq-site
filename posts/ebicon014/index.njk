@@ -9,7 +9,7 @@ eleventyComputed:
 eventDate: 2023-03-18 10:00
 eventEndTime: "20:00(最大)"
 playerClosingDate: 2023-03-16 23:59
-masterClosingDate: 2023-03-11 23:59
+masterClosingDate: 2023-03-12 23:59
 maxTable: 6
 eleventyNavigation:
   key: table
@@ -53,7 +53,7 @@ eleventyNavigation:
 <h3>参加申込</h3>
 <a href="/pages/rule/">参加規約</a>を確認の上、同ページ内のリンクから申し込み下さい。
 
-<h3>卓情報</h3>{{ eventTag }}
+<h3>卓情報</h3>
 {%- for post in collections[tags[1]] -%}
 {% if post.data.tags.includes('abstract') == false %}
   <li{% if page.url == post.url %} aria-current="page"{% endif %}><a href="{{ post.url }}">{{ post.data.title }}</a></li>
