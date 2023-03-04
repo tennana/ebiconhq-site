@@ -341,8 +341,9 @@ body.dark .card__date {
   margin-left: auto;
 }
 pre {
-  background-color: #d3d3d3;
+  white-space: pre-wrap;
+  color: #000;
 }
-.bark pre {
-  background-color: #2f4f4f;
+.dark pre {
+  color: #fff;
 }
