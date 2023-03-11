@@ -24,7 +24,12 @@ layout: layouts/post.njk
 {{ table.items }}
 
 <h4>卓概要</h4>
+{% if table.content %}
 <pre>{{ table.content }}</pre>
+{% endif %}
+{% if table.content_html %}
+{{ table.content_html | safe }}
+{% endif %}
 
 <div class="pagination">
 	{% if pagination.previous %}
