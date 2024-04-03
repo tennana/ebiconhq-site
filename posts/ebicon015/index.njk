@@ -1,0 +1,86 @@
+---
+title: Ebicon 15th
+tags:
+- Ebicon 15th
+- abstract
+layout: layouts/base.njk
+eleventyComputed:
+    card_description: "{{ eventDate | readableJaDate }}～に奈良県奈良市で開催予定のTRPGコンベンション「{{ title }}」の開催概要です。"
+eventDate: 2024-07-14 10:00
+eventEndTime: "20:00(最大)"
+playerClosingDate: 2024-07-10 23:59
+masterClosingDate: 2024-06-30 23:59
+maxTable: 5
+eleventyNavigation:
+  key: table
+  title: 15th
+  order: 2
+---
+{% extends 'layouts/abstracts.njk' %}
+{% block place %}
+〒630-8225<br>
+奈良県奈良市西御門町11-11（プライムビル4F）<br>
+近鉄奈良駅西改札5番出口横、「レンタルスペースかねこ」様
+{% endblock %}
+{% block table %}
+    <h3>卓</h3>
+    4-5卓程度
+{% endblock %}
+{% block price %}
+    <h3>参加料</h3>
+    <dl>
+        <dt>一般参加</dt>
+        <dd>事前予約25人以上:500円/人, 事前予約24人以下1000円/人</dd>
+        <dt>奈良割</dt>
+        <dd><a href="https://narashikanko.or.jp/">奈良市観光協会サイト</a>掲載施設の、2024年7月に有効なチケット(拝観チケット等)持参の方は、全体人数に関わらず500円</dd>
+        <dt>えび尻尾</dt>
+        <dd>一般参加から20%引き</dd>
+        <dt>スタッフ</dt>
+        <dd>0円 (代表以外)</dd>
+    </dl>
+    <p>募金箱が設置されます。</p>
+    <h4>利用目的</h4>
+    主として会場費、運営雑費。ほぼ会場費。余剰は出ない見通しですが、出た場合はペットボトル飲料のサービスに回します。
+{% endblock %}
+
+{% block content %}
+<h3>テーマ</h3>
+<span>Ebicon 15th ～海無し県の海の日イブ～</span>
+<p>土曜は空いていませんでした。テーマもてきとうです。わあ。</p>
+
+<h3>諸注意</h3>
+<span>予算の都合上、過去にやっていたソーダストリームやプリンタ等の機材設置はありません。</span>
+<ol>
+  <li>防疫上問題があると判断した場合、代表の判断を根拠に退出頂きます。</li>
+　<li>受付時に全員、体調と手指消毒の確認を致します。また入退室時に抜き打ちでお声かけする場合があります。</li>
+  <li>受付時までに、感染症発生時の連絡先を頂戴いたします。日常的に確認されていればメール、<del>X</del> Twitterアカウントでも問題はありません。本情報は同目的にのみ利用され、会場へも提出されません。</li>
+　<li>室内では飲食可ですが、咳エチケットの徹底をお願いします。自信がない場合はマスク着用をお薦めします。</li>
+　<li>アクリル板等の仕切りはありません。</li>
+  <li>気持ちはわかりますが大声は控えて下さい。たぶん駐車場まで聞こえます。</li>
+  <li>会場職員の指示と本諸注意・参加規約が矛盾した場合、会場職員の指示が正となります。</li>
+</ol>
+
+<h3>スケジュール(おおらか)</h3>
+10:00 開場<br>
+10:55 開会式(代表の妄言、会場諸注意、卓紹介など)、卓分け<br>
+11:40- セッション時間<br>
+18:30 閉会式(様子を見て±30分することがあります)<br>
+20:00 完全撤収
+
+<h3>卓分け方式</h3>
+完全当日卓分けです。
+
+<h3>懇親会</h3>
+未定ですが公式にはやらない可能性が高いです。
+
+<h3>参加申込</h3>
+<a href="/pages/rule/">参加規約</a>を確認の上、同ページ内のリンクから申し込み下さい。
+
+<h3>卓情報</h3>
+{%- for post in collections[tags[1]] -%}
+{% if post.data.tags.includes('abstract') == false %}
+  <li{% if page.url == post.url %} aria-current="page"{% endif %}><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endif %}
+{%- endfor -%}
+
+{% endblock %}
