@@ -11,6 +11,7 @@
     "stylus": "^0.64.0"
   },
   "scripts": {
+    "test": "npm run build:11ty && node --test tests/*.test.cjs",
     "build:stylus": "stylus --compress ./stylus/ --out ./static/css/",
     "watch:stylus": "stylus --watch ./stylus/ --out ./static/css/",
     "build:11ty": "eleventy",
