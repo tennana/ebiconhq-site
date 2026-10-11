@@ -60,7 +60,7 @@ eleventyNavigation:
 4. 各回の定員を越える応募があった場合は抽選となりますので予めご了承下さい。
 5. 当日の卓分け後、参加を希望されない場合は、参加費の払い戻しを受けた上で退出することができます。
 
-[参加申し込みはこちら](https://docs.google.com/forms/d/e/1FAIpQLSdfSSlEp_RRodFbBfKQ6lK9cZjOCbXnx8dQNIgJPSM_ueLDuQ/viewform?usp=sf_link)
+[参加申し込みはこちら（全区分共通）](https://docs.google.com/forms/d/e/1FAIpQLSfoAMC2STCkKf32wt5LJ7lYvRap34zOaFrNa-_xodODdw2jdA/viewform)
 
 #### ゲームマスター・ヘルP参加希望の方へ
 
@@ -78,7 +78,7 @@ eleventyNavigation:
 8. プレイヤーが参加辞退できるシステム上、必ず立卓する保証はできません。立卓しなかった場合はプレイヤー参加として扱います。
 9. 参加申込後、スタッフからの受付連絡か卓情報の掲載があって申し込み完了となります。5日以内に卓情報が掲載されない場合は届いていない可能性があります。
 
-[参加申し込みはこちら](https://docs.google.com/forms/d/e/1FAIpQLSdfSSlEp_RRodFbBfKQ6lK9cZjOCbXnx8dQNIgJPSM_ueLDuQ/viewform?usp=sf_link)
+[参加申し込みはこちら（全区分共通）](https://docs.google.com/forms/d/e/1FAIpQLSfoAMC2STCkKf32wt5LJ7lYvRap34zOaFrNa-_xodODdw2jdA/viewform)
 
 #### えびの尻尾希望の方へ
 
@@ -87,4 +87,4 @@ eleventyNavigation:
 3. 特典として参加費が無料になりますが、それ以上に扱き使います。
 4. 何かの間違いで応募が多い場合は、「近場である」「主催と顔見知りである」等を優先して絞込みますので、申込時に居住県を記入して下さい。
 
-[参加申し込みはこちら](https://docs.google.com/forms/d/e/1FAIpQLSdfSSlEp_RRodFbBfKQ6lK9cZjOCbXnx8dQNIgJPSM_ueLDuQ/viewform?usp=sf_link)
+[参加申し込みはこちら（全区分共通）](https://docs.google.com/forms/d/e/1FAIpQLSfoAMC2STCkKf32wt5LJ7lYvRap34zOaFrNa-_xodODdw2jdA/viewform)
