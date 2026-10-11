@@ -6,21 +6,21 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>{{ site.meta.title }}</title>
 	<subtitle>{{ site.feed.subtitle }}</subtitle>
-	{% set absoluteUrl %}{{ site.feed.path | url | absoluteUrl(metadata.url) }}{% endset %}
+	{% set absoluteUrl %}{{ site.feed.path | url | absoluteUrl(site.meta.siteUrl) }}{% endset %}
 	<link href="{{ absoluteUrl }}" rel="self"/>
-	<link href="{{ site.siteurl }}"/>
-	<updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
+	<link href="{{ site.meta.siteUrl }}"/>
+	<updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 	<id>{{ site.feed.id }}</id>
 	<author>
 		<name>{{ site.feed.authorName }}</name>
 		<email>{{ site.feed.authorEmail }}</email>
 	</author>
 	{%- for post in collections.post | reverse %}
-	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.meta.siteUrl) }}{% endset %}
 	<entry>
 		<title>{{ post.data.title }}</title>
 		<link href="{{ absolutePostUrl }}"/>
-		<updated>{{ post.date | rssDate }}</updated>
+		<updated>{{ post.date | dateToRfc3339 }}</updated>
 		<id>{{ absolutePostUrl }}</id>
 		<content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
 	</entry>

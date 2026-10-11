@@ -11,11 +11,11 @@ eleventyExcludeFromCollections: true
         <language>ja</language>
         <description>{{ site.meta.description }}</description>
     {%- for post in collections.post | reverse %}
-        {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.siteUrl) }}{% endset %}
+        {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.meta.siteUrl) }}{% endset %}
         <item>
             <title>{{ post.data.title }}</title>
             <link>{{ absolutePostUrl }}</link>
-            <pubDate>{{ post.date | rssDate }}</pubDate>
+            <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
             <description><![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}]]></description>
         </item>
     {%- endfor %}

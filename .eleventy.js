@@ -1,6 +1,6 @@
 const {DateTime} = require('luxon')
 const navigationPlugin = require('@11ty/eleventy-navigation')
-const rssPlugin = require('@11ty/eleventy-plugin-rss')
+const rssPlugin = require('@11ty/eleventy-plugin-rss').default
 const metagen = require("eleventy-plugin-metagen")
 const {createInlineCss} = require("eleventy-google-fonts/eleventy-google-fonts");
 
@@ -26,6 +26,9 @@ module.exports = (config) => {
     });
 
     config.addFilter("readableDate", (dateObj) => {
+        if (typeof dateObj === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(dateObj)) {
+            return DateTime.fromISO(dateObj, {zone: 'Asia/Tokyo'}).toFormat('yyyy/LL/dd');
+        }
         if(Object.prototype.toString.call(dateObj) === "[object Date]"){
             return DateTime.fromJSDate(dateObj, {zone: 'asia/tokyo'}).toFormat("yyyy/LL/dd");
         }
@@ -33,6 +36,9 @@ module.exports = (config) => {
     });
 
     config.addFilter("readableJaDate", (dateObj) => {
+        if (typeof dateObj === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(dateObj)) {
+            return DateTime.fromISO(dateObj, {zone: 'Asia/Tokyo'}).setLocale('ja').toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
+        }
         if(Object.prototype.toString.call(dateObj) === "[object Date]"){
             return DateTime.fromJSDate(dateObj, {zone: 'asia/tokyo'}).setLocale('ja').toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY);
         }

@@ -4,7 +4,7 @@
   "eleventyExcludeFromCollections": true
 }
 ---
-{% set absoluteUrl %}{{ permalink | url | absoluteUrl(metadata.url) }}{% endset %}
+{% set absoluteUrl %}{{ permalink | url | absoluteUrl(site.meta.siteUrl) }}{% endset %}
 {
   "version": "https://jsonfeed.org/version/1",
   "title": "{{  site.meta.title }}",

@@ -1,0 +1,70 @@
+---
+title: Ebicon 16bit
+subtitle: 寿卓司さん入局記念杯
+date: 2026-10-13
+tags:
+- Ebicon 16bit
+- abstract
+layout: layouts/base.njk
+description: 2027年3月6日(土)、奈良県コンベンションセンター 206会議室で開催するTRPGコンベンション「Ebicon 16bit ～寿卓司さん入局記念杯～」の開催概要です。
+eleventyComputed:
+    card_description: "{{ description }}"
+eventDate: 2027-03-06 10:00
+eventEndTime: "20:00(完全撤収目標)"
+playerClosingDate: 2027-03-03 23:59
+masterClosingDate: 2027-02-21 23:59
+eleventyNavigation:
+  key: ebicon016
+  title: 16bit
+  order: 1
+---
+{% extends 'layouts/abstracts.njk' %}
+{% block eventDate %}
+    <h3>日時</h3>
+    <dl>
+        <dt>開場日時</dt>
+        <dd>{{ eventDate | readableJaDate }}</dd>
+        <dt>開催時刻</dt>
+        <dd>10:55開会・18:30閉会式予定・20:00完全撤収目標</dd>
+        <dt>PL事前予約締切日</dt>
+        <dd>{{ playerClosingDate | readableJaDate }}</dd>
+        <dt>GM申込締切日</dt>
+        <dd>{{ masterClosingDate | readableJaDate }}</dd>
+    </dl>
+{% endblock %}
+{% block place %}
+    <h3>場所</h3>
+    <p>奈良県コンベンションセンター 206会議室</p>
+{% endblock %}
+{% block price %}
+    <h3>参加料</h3>
+    <p>1,000円/人</p>
+{% endblock %}
+{% block table %}
+    <h3>卓</h3>
+    <p>未定。最大8卓前後</p>
+{% endblock %}
+{% block content %}
+    <h3>参加申込</h3>
+    <p>申込方法・受付開始時期は後日お知らせします。</p>
+    <h3>スケジュール</h3>
+    <dl>
+        <dt>09:00</dt>
+        <dd>スタッフ入室・設営</dd>
+        <dt>10:00</dt>
+        <dd>開場・受付開始</dd>
+        <dt>10:55</dt>
+        <dd>開会式・卓紹介・卓分け</dd>
+        <dt>11:40</dt>
+        <dd>セッション開始（昼食・休憩は各卓で調整）</dd>
+        <dt>18:30</dt>
+        <dd>セッション終了・閉会式</dd>
+        <dt>19:00頃</dt>
+        <dd>閉会式終了・片付け</dd>
+        <dt>20:00</dt>
+        <dd>スタッフ完全撤収目標</dd>
+    </dl>
+    <p>会場利用は最長21:30までです。20:00以降は進行の遅れや原状復帰のための予備時間とします。</p>
+    <h3>卓情報</h3>
+    <p>詳細は決まり次第、このサイトでお知らせします。</p>
+{% endblock %}

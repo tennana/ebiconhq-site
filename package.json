@@ -3,23 +3,27 @@
   "version": "1.0.0",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-rss": "^1.1.1",
-    "concurrently": "^7.6.0",
-    "luxon": "^3.1.1",
-    "stylus": "^0.59.0"
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-navigation": "^1.0.5",
+    "@11ty/eleventy-plugin-rss": "^3.1.0",
+    "concurrently": "^10.0.5",
+    "luxon": "^3.7.2",
+    "stylus": "^0.64.0"
   },
   "scripts": {
     "build:stylus": "stylus --compress ./stylus/ --out ./static/css/",
     "watch:stylus": "stylus --watch ./stylus/ --out ./static/css/",
     "build:11ty": "eleventy",
     "watch:11ty": "eleventy --serve --watch",
-    "build": "yarn build:stylus && yarn build:11ty",
-    "dev": "concurrently -n stylus,11ty \"yarn watch:stylus\" \"yarn watch:11ty\""
+    "build": "npm run build:stylus && npm run build:11ty",
+    "dev": "concurrently -n stylus,11ty \"npm run watch:stylus\" \"npm run watch:11ty\""
   },
   "dependencies": {
     "eleventy-google-fonts": "^0.1.0",
-    "eleventy-plugin-metagen": "^1.6.0"
-  }
+    "eleventy-plugin-metagen": "^1.8.5"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "packageManager": "yarn@1.22.22"
 }
