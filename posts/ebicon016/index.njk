@@ -42,7 +42,7 @@ eleventyNavigation:
 {% endblock %}
 {% block table %}
     <h3>卓</h3>
-    <p>未定。最大8卓前後</p>
+    <p>現在募集期間中です。最大8卓前後を目安としています</p>
 {% endblock %}
 {% block content %}
     <h3>参加申込</h3>
@@ -66,5 +66,9 @@ eleventyNavigation:
     </dl>
     <p>会場利用は最長21:30までです。20:00以降は進行の遅れや原状復帰のための予備時間とします。</p>
     <h3>卓情報</h3>
-    <p>詳細は決まり次第、このサイトでお知らせします。</p>
+    {%- for post in collections[tags[1]] -%}
+    {% if post.data.tags.includes('abstract') == false %}
+      <li{% if page.url == post.url %} aria-current="page"{% endif %}><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+    {% endif %}
+    {%- endfor -%}
 {% endblock %}
