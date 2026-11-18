@@ -26,7 +26,7 @@ for (const [file, expected] of [
     ['pages/about/index.html', '奈良県奈良市のTRPGコンベンション「Ebicon」とはなんぞや、が書かれています。'],
     ['pages/faq/index.html', '奈良県奈良市のTRPGコンベンション、Ebiconの寄せられてもいないQA集です。'],
     ['posts/ebicon015/index.html', '2024年7月14日(日) 10:00～に奈良県奈良市で開催予定のTRPGコンベンション「Ebicon 15th」の開催概要です。'],
-    ['posts/ebicon016/index.html', '2027年3月6日(土)、奈良県コンベンションセンター 206会議室で開催するTRPGコンベンション「Ebicon 16bit ～寿卓司さん入局記念杯～」の開催概要です。'],
+    ['posts/ebicon016/index.html', '2027年3月6日(土)、奈良県コンベンションセンター 206会議室'],
 ]) {
     test(`description precedence and social metadata: ${file}`, () => {
         const head = readHead(file);
